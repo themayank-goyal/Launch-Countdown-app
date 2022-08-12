@@ -1,38 +1,107 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Red Hat Text";
+  height: 100vh;
+  overflow: hidden;
+  background: url('./images/bg-stars.svg'),  linear-gradient(to top, hsl(235, 16%, 14%), hsl(235, 17%, 12%));
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title {
+  font-weight: 500;
+  font: bolder;
+  letter-spacing: 1.1px;
+  margin-top: 15rem;
+  text-transform: uppercase;
   text-align: center;
+  color: #fff;
+  font-size: 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.count-down {
+  display: grid;
+  grid-template-columns: repeat(4, 11rem);
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1rem;
+  margin: 0 auto;
+  padding: 4rem;
+  max-width: 80rem;
+  font-weight: 700;
+  font-size: 6.2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.count::before {
+  content: " ";
+  background: linear-gradient(to left, #000 0% 50%, hsl(235 18% 12%) 50% 100%);
+  padding: 0.5rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  transform: translateX(-50%);
+}
+.count::after {
+  content: " ";
+  background: linear-gradient(to right, #000 0% 50%, hsl(235 18% 12%) 50% 100%);
+  padding: 0.5rem;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  transform: translateX(50%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.count {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  align-self: center;
+  width: 8rem;
+  height: 8rem;
+  margin: 2rem;
+  padding: 5rem;
+  border-radius: 11px;
+  color: hsl(345, 95%, 68%);
+  background: linear-gradient(
+    to top,
+    hsl(236, 19%, 34%) 0% 49%,
+    #111 49% 50%,
+    hsl(236, 21%, 26%) 50% 100%
+  );
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5.4rem 5.5rem, rgba(0, 0, 0, 0.12) 0px -1.2rem 3rem, rgba(0, 0, 0, 0.12) 0px .4rem .6rem, rgba(0, 0, 0, 0.17) 0px 1.2rem 1.3rem, rgba(0, 0, 0, 0.09) 0px -.3rem .5rem;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  align-self: center;
+  width: 8rem;
+  padding: 0 5rem;
+  font-size: 1.4rem;
+  text-align: center;
+  color: hsl(237, 18%, 59%);
+}
+
+.hills {
+  position: absolute;
+  width: 100%;
+  height: 20vh;
+  bottom: 0rem;
+}
+
+@media (max-width: 35em) {
+  html{
+    font-size: 40%;
   }
 }
